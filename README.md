@@ -56,3 +56,29 @@ Build an uptime monitoring RESTful API server that allows authenticated users to
 - [Pushover](https://pushover.net/) integration to receive alerts on mobile devices.
 
 Try your best to implement as much as you can from the given requirements and feel free to add more if you want to.
+
+
+# Solution Guide
+
+This guide will walk the user of this application through how to run the project, access the api docs, and finally run the tests
+
+## Setup
+- Clone this repo, make sure you have docker installed and running on your machine 
+- In the cloned folder where the `docker-compose.yml` is found run ```docker-compose build ``` and ``` docker-compose up  ```
+- These commands will build out the container and image used to run the project
+- After startring the container the application will be served on `localhost:8080`
+
+## Accessing the image
+- If you want to access a terminal session inside the container run this command  ```docker exec -it {folder the project resides in}-app-1 bash```
+- This will start a terminal session inside the container
+
+## Running Tests 
+- I have written unit tests for the user model, this is due time and deadline constraint imposed by another project that I was handed however it demonstrates how I run tests that include the DB using an in memory db
+- To run the tests start a bash session as seen in the [Accessing the image](#accessing-the-image) section
+- Run ```npm test```
+  
+## API docs 
+- Start the container 
+- Go to `localhost:8080/api-docs` 
+- You will see the docs implemented in Swagger with all the APIs and their relevant information
+
